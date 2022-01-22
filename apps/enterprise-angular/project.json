@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "root": "apps/enterprise-angular",
+  "sourceRoot": "apps/enterprise-angular/src",
+  "prefix": "enterprise-angular",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/enterprise-angular",
+        "index": "apps/enterprise-angular/src/index.html",
+        "main": "apps/enterprise-angular/src/main.ts",
+        "polyfills": "apps/enterprise-angular/src/polyfills.ts",
+        "tsConfig": "apps/enterprise-angular/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/enterprise-angular/src/favicon.ico",
+          "apps/enterprise-angular/src/assets"
+        ],
+        "styles": ["apps/enterprise-angular/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/enterprise-angular/src/environments/environment.ts",
+              "with": "apps/enterprise-angular/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "enterprise-angular:build:production"
+        },
+        "development": {
+          "browserTarget": "enterprise-angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/enterprise-angular/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "enterprise-angular:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/enterprise-angular/src/**/*.ts",
+          "apps/enterprise-angular/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/enterprise-angular"],
+      "options": {
+        "jestConfig": "apps/enterprise-angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

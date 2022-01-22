@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "enterprise-angular": "apps/enterprise-angular",
+    "enterprise-angular-e2e": "apps/enterprise-angular-e2e"
+  }
+}
