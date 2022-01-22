@@ -3,6 +3,7 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "components": "libs/components",
     "enterprise-angular": "apps/enterprise-angular",
     "enterprise-angular-e2e": "apps/enterprise-angular-e2e"
   }
