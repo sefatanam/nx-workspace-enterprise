@@ -1,9 +1,4 @@
-<div style="text-align: center">
-  <h1>Welcome to enterprise-angular!</h1>
-  <img width="450" src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-       alt="Nx - Smart, Fast and Extensible Build System"/>
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
 
-<enterprise-angular-button [title]="'Welcome Button'"></enterprise-angular-button>
-<enterprise-angular-card></enterprise-angular-card>
+<ng-container *ngIf="members.length>0">
+  <enterprise-angular-card *ngFor="let member of members" [member]="member"></enterprise-angular-card>
+</ng-container>
