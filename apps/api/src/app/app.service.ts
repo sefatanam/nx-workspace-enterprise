@@ -1,9 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import { Message } from '@enterprise-angular/api-interfaces';
+import {Injectable} from '@nestjs/common';
+import {Message} from '@enterprise-angular/api-interfaces';
 
 @Injectable()
 export class AppService {
   getData(): Message {
-    return { message: 'Welcome to api!' };
+    return {message: 'A message from server'};
+  }
+
+
+  getMembers() {
   }
 }
