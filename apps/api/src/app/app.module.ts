@@ -1,10 +1,21 @@
-import { Module } from '@nestjs/common';
+import {Module} from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import {AppController} from './app.controller';
+import {AppService} from './app.service';
+import {TypeOrmModule} from "@nestjs/typeorm";
+import {Member} from "@enterprise-angular/api-interfaces";
+import {MembersModule} from "./members/members.module";
 
 @Module({
-  imports: [],
+  imports: [
+    MembersModule,
+    TypeOrmModule.forRoot({
+      type: 'sqlite',
+      database: './db.sqlite',
+      entities: [Member],
+      synchronize: true
+    })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

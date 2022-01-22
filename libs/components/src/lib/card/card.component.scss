@@ -1,0 +1,17 @@
+
+article{
+  @apply bg-indigo-700 text-white px-2 py-4 md:w-52 rounded
+  hover:bg-indigo-600 hover:rounded-xl transition-all duration-300;
+
+  h1{
+    @apply text-2xl;
+  }
+
+  h4{
+    @apply text-lg;
+  }
+
+  p{
+    @apply text-sm;
+  }
+}
