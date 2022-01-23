@@ -6,10 +6,11 @@ import {NxWelcomeComponent} from './nx-welcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ComponentsModule} from "@enterprise-angular/components";
 import {CommonModule} from "@angular/common";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, ComponentsModule, CommonModule, HttpClientModule],
+  imports: [BrowserModule, ComponentsModule, CommonModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

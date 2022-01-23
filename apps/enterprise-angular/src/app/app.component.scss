@@ -1,3 +1,27 @@
 :host {
   @apply flex gap-2 m-2;
+
+  form{
+    .control{
+      @apply flex flex-col;
+
+      label{
+        @apply font-medium tracking-wide mb-2;
+      }
+
+      input{
+        @apply py-3 px-2 rounded font-medium ring-0 border-0 focus-within:border-0 active:ring-0 focus:outline-0;
+      }
+    }
+
+    button[type=submit]{
+      @apply w-full rounded py-3 my-3 text-center bg-green-600 text-white font-medium;
+    }
+  }
+
+}
+
+
+h1{
+  @apply mb-3 text-2xl font-medium;
 }

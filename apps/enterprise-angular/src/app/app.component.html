@@ -1,4 +1,44 @@
+<section class="grid md:grid-cols-6 w-full gap-4">
 
-<ng-container *ngIf="members.length>0">
-  <enterprise-angular-card *ngFor="let member of members" [member]="member"></enterprise-angular-card>
-</ng-container>
+  <div class="md:col-span-2">
+
+    <h1>Member Registration Form</h1>
+    <form [formGroup]="memberForm" (ngSubmit)="submit()">
+      <div class="control">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+      <div class="control">
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email">
+      </div>
+      <div class="control">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" formControlName="phone">
+      </div>
+      <div class="control">
+        <label for="address">Address</label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+
+      <button type="submit" [disabled]="memberForm.invalid">Submit</button>
+    </form>
+  </div>
+
+  <div class="md:col-span-4 ">
+    <h1 *ngIf="members.length>0">Registered Member</h1>
+
+    <section class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <ng-container *ngIf="members.length>0">
+        <enterprise-angular-card *ngFor="let member of members" [member]="member"></enterprise-angular-card>
+      </ng-container>
+    </section>
+
+
+    <ng-container *ngIf="members.length<=0">
+      <h1>No Member found.</h1>
+    </ng-container>
+  </div>
+
+
+</section>
