@@ -9,7 +9,7 @@ export class MembersService {
   constructor(@InjectRepository(Member) private repo: Repository<Member>) {}
 
   async create(memberDto: MemberDto): Promise<Member> {
-    const member = this.repo.create({...memberDto});
+    const member = await this.repo.create({...memberDto});
     return await this.repo.save(member);
   }
 
